@@ -5,5 +5,5 @@ app_name = 'core'
 
 
 urlpatterns = [
-    path(),
+    # path(),
 ]
