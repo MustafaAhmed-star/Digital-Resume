@@ -13,7 +13,7 @@ class Skill(models.Model):
         return self.name
         
         
-class UserProfile(models.model):
+class UserProfile(models.Model):
 
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     avatar = models.ImageField(blank=True,null=True , upload_to='avatar')
@@ -25,7 +25,7 @@ class UserProfile(models.model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
         
-class ContactProfile(models.model):
+class ContactProfile(models.Model):
     class Meta:
         ordering = ['timestamp']
     name =models.CharField(max_length=50,blank=True,null=True)
@@ -36,7 +36,7 @@ class ContactProfile(models.model):
     def __str__(self):
         return self.name
         
-class Testmonial(models.model):
+class Testimonial(models.Model):
     class Meta:
         ordering = ['name']
         
@@ -107,7 +107,7 @@ class Blog(models.Model):
     author = models.CharField(max_length=200, blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
-    body = RichTextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True)
     image = models.ImageField(blank=True, null=True, upload_to="blog")
     is_active = models.BooleanField(default=True)
@@ -118,8 +118,9 @@ class Blog(models.Model):
         super(Blog, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
-
+        if self.name:
+            return self.name
+        return 'Unkonwn'
     def get_absolute_url(self):
         return f"/blog/{self.slug}"
 

@@ -6,7 +6,9 @@ from django.conf.urls.static import static
 from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('core.urls',namespace='core'))
+    path('',include('core.urls',namespace='core')),
+    path('summernote/', include('django_summernote.urls')),
+
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
