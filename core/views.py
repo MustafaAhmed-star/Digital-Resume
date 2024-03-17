@@ -64,4 +64,4 @@ class BlogView(generic.ListView):
         
 class BlogDetailView(generic.DetailView):
     model = Blog
-    template_name = 'core/portfolio-detail.html'
+    template_name = 'core/blog-detail.html'
