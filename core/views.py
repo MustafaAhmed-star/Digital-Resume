@@ -49,7 +49,7 @@ class PortfolioView(generic.ListView):
     def get_queryset(self) -> QuerySet[Any]:
         return super().get_queryset().filter(is_active = True)
         
-def PortfolioDetailView(generic.DetailView):
+class PortfolioDetailView(generic.DetailView):
     model = Portfolio
     template_name = 'core/portfolio-detail.html'
     
