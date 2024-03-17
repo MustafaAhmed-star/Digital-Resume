@@ -1,4 +1,5 @@
 from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import generic
@@ -38,4 +39,17 @@ class ContactView(generic.FormView):
         form.save()
         messages.success(self.request,'Thank you , we will be in touch soon !')
         return super().form_valid(form)
+
+
+class PortfolioView(generic.ListView):
+    model = Portfolio
+    template_name = 'core/portfolio.html'
+    paginate_by = 10
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        return super().get_queryset().filter(is_active = True)
+        
+def PortfolioDetailView(generic.DetailView):
+    model = Portfolio
+    template_name = 'core/portfolio-detail.html'
     
