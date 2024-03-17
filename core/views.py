@@ -53,3 +53,11 @@ class PortfolioDetailView(generic.DetailView):
     model = Portfolio
     template_name = 'core/portfolio-detail.html'
     
+    
+class BlogView(generic.ListView):
+    model = Blog
+    template_name ='core/blog.html'
+    paginate_by = 10
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        return super().get_queryset().filter(is_active = True)
