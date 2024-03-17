@@ -5,7 +5,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Did Coding - Home</title>
+        <title> {% block title %}{% endblock  %}
+            </title>
         <meta
             name="author"
             content="Did Coding Limited & James Granger Design"
@@ -14,11 +15,11 @@
         <link rel="home" href="{% url 'core:home' %}" />
         <meta
             name="description"
-            content="{% block description %}{% endblock description %}"
+            content="{% block description %}{% endblock  %}"
         />
         <meta
             name="keywords"
-            content="{% block keywords %}{% endblock keywords %}"
+            content="{% block keywords %}{% endblock  %}"
         />
 
         <link
@@ -67,7 +68,7 @@
         
         
         {% block extend_footer %}{%endblock%}
-
+        {% include 'partials/footer.html' %}
         <!-- ================================
     End Scripts
     ================================= -->
