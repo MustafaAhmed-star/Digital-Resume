@@ -1,1 +1,65 @@
-<h1>Hello My fucking world</h1>
+
+{% extends 'base.html' %}
+      
+      <!-- ================================
+        Start SEO blocks
+        ================================= -->
+        {% block title %}{% endblock %}
+        {% block decription %}{% endblock %}
+        {% block keywords %}{% endblock %}
+        <!-- ================================
+        END SEO blocks
+        ================================= -->
+        <!-- ================================
+        Start CSS blocks
+        ================================= -->
+        {% block extend_header %}{% endblock %}
+        <!-- ================================
+        END CSS blocks
+        ================================= -->
+        <!-- ================================
+        Start script blocks
+        ================================= -->
+        {% block extend_footer %}{% endblock %}
+        <!-- ================================
+        END script blocks
+        ================================= -->
+
+      
+      {% block content %}
+        
+        
+    <section>
+      <div class="bannerSection">
+        <div class="container">
+          <div class="row g-4 g-md-3  align-items-center">
+            <div class="col-md-auto order-md-last">
+              <div class="bannerUserImg">
+                <img src="images/user-img.jpg" alt="...">
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="bannerContent">
+                <h1 class="xlTitle pb-3">Hi, I’m Mustafa, <br> a back-end Developer</h1>
+                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <div class="bannerBtnCol">
+                  <div class="row">
+                    <div class="col-auto">
+                      <a download href="javascript:void(0)" class="btn btnPrimary">Download Resume</a>
+                    </div>
+                    <div class="col-auto">
+                      <a href="contact.html" class="btn btnOutline">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+
+
+      {% endblock content %}
