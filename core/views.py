@@ -3,7 +3,7 @@ from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import generic
-
+from django.contrib.auth.models import User
 from .models import (Skill,UserProfile
 ,ContactProfile,Media
 ,Testimonial,Portfolio
@@ -21,11 +21,12 @@ class IndexView(generic.TemplateView):
         certificates = Certificate.objects.filter(is_active=True)
         blogs = Blog.objects.filter(is_active=True)
         pvortfolio = Portfolio.objects.filter(is_active=True)
-        
+        user =User.objects.first()
         context['tesetimonial']=tesetimonial
         context['certificates']=certificates
         context['blogs']=blogs
         context['pvortfolio']=pvortfolio
+        context['me']=user
         
         return context
 
