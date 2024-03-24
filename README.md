@@ -1,8 +1,8 @@
 # Digital-Resume
 
-**discription** : simple project to create a portfolio and show your skills with blog to show an  article with a dynamic way
+**discription** :  simple project to create a portfolio and show your skills with blog to show an  article with a dynamic way.. 
 
-**photos** :<p> live from project</p>
+**photos** :<p> live from project</p>.. 
 ![image](https://github.com/MustafaAhmed-star/Digital-Resume/assets/67156516/a12e02ce-ee87-4857-b553-e2b665f4b817)
 
 ![image](https://github.com/MustafaAhmed-star/Digital-Resume/assets/67156516/482af705-3080-44f0-a5ac-c25145d90a6a)
